@@ -2,68 +2,38 @@
 
 <html lang="en">
 <head>
-<!-- WhatsApp Preview Meta Tags -->
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="theme-color" content="#0e0c0a"/>
 
-<meta property="og:title" content="Rahul & Sameera — Wedding Invitation"/>
+<title>Rahul & Sameera Wedding Invitation</title>
+
+<!-- WhatsApp Preview -->
+
+<meta property="og:title" content="Rahul & Sameera Wedding Invitation"/>
 <meta property="og:description" content="Join us for our Wedding & Reception | 19 & 20 April 2026"/>
 <meta property="og:image" content="https://rahulc6.github.io/rahul-sameeera/photo1.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
 <meta property="og:url" content="https://rahulc6.github.io/rahul-sameeera/"/>
 <meta property="og:type" content="website"/>
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://rahulc6.github.io/rahul-sameeera/photo1.jpg">
 
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
-<meta name="theme-color" content="#0e0c0a"/>
-
-<title>Rahul & Sameera — Wedding Reception</title>
-
-<meta property="og:type" content="website"/>
-<meta property="og:title" content="Rahul & Sameera — Wedding Reception"/>
-<meta property="og:description" content="Join us for our wedding celebrations"/>
-<meta property="og:image" content="photo1.jpg"/>
-
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Outfit:wght@200;300;400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Outfit:wght@300;400&display=swap" rel="stylesheet"/>
 
 <style>
 
-*{box-sizing:border-box;margin:0;padding:0}
+*{margin:0;padding:0;box-sizing:border-box}
 
 body{
 background:#0e0c0a;
 color:#f0e8d8;
 font-family:'Outfit',sans-serif;
-overflow-x:hidden;
 }
 
-/* Animations */
-
-@keyframes fadeUp{
-from{opacity:0;transform:translateY(30px)}
-to{opacity:1;transform:translateY(0)}
-}
-
-@keyframes zoomSlow{
-from{transform:scale(1)}
-to{transform:scale(1.08)}
-}
-
-.reveal{
-opacity:0;
-transform:translateY(30px);
-transition:.9s ease;
-}
-
-.reveal.show{
-opacity:1;
-transform:translateY(0);
-}
-
-/* HERO */
+/* Hero */
 
 .hero{
 height:100vh;
@@ -72,130 +42,59 @@ overflow:hidden;
 }
 
 .hero img{
-position:absolute;
 width:100%;
 height:100%;
 object-fit:cover;
 filter:brightness(.6);
-animation:zoomSlow 18s ease-in-out infinite alternate;
 }
 
 .hero-content{
 position:absolute;
 bottom:0;
-left:0;
-right:0;
-padding:2.5rem 1.5rem;
+padding:2rem;
 text-align:center;
+width:100%;
 }
 
-.hero-names{
+.hero h1{
 font-family:'Playfair Display',serif;
 font-size:3rem;
-color:white;
-animation:fadeUp 1s ease .4s both;
 }
 
-.hero-names em{
+.hero em{
 display:block;
 color:#c9a96e;
-font-style:italic;
 }
-
-.hero-date{
-margin-top:1rem;
-font-size:.8rem;
-letter-spacing:.25em;
-animation:fadeUp 1s ease .8s both;
-}
-
-.hero-venue{
-margin-top:.4rem;
-font-size:.8rem;
-opacity:.7;
-animation:fadeUp 1s ease 1s both;
-}
-
-/* SECTION */
 
 .section{
 padding:3rem 1.5rem;
 text-align:center;
 }
 
-.section-title{
-font-family:'Playfair Display',serif;
-font-size:2rem;
-margin-bottom:1rem;
-}
-
-/* CARD */
-
 .card{
 background:#1c1814;
 padding:1.8rem;
 border-radius:16px;
-border:1px solid rgba(255,255,255,.08);
-margin-top:1.2rem;
+margin-top:1.5rem;
 }
 
 .reception{
-border:1px solid rgba(201,169,110,.25);
-background:linear-gradient(
-to bottom,
-rgba(201,169,110,.08),
-transparent
-);
-}
-
-.card h3{
-font-family:'Playfair Display',serif;
-font-size:1.4rem;
-color:#c9a96e;
-margin-bottom:.5rem;
-}
-
-.card-date{
-font-size:.75rem;
-letter-spacing:.2em;
-color:#c9a96e;
-margin-bottom:.6rem;
+border:1px solid #c9a96e;
 }
 
 .event-time{
-display:flex;
-align-items:center;
-justify-content:center;
-gap:.4rem;
-margin-bottom:.8rem;
+margin:.5rem 0;
 color:#c9a96e;
-}
-
-.event-time svg{
-width:16px;
-height:16px;
-stroke:#c9a96e;
-fill:none;
-stroke-width:1.6;
 }
 
 .map-btn{
 display:inline-block;
 margin-top:1rem;
-padding:.8rem 1.4rem;
-background:rgba(201,169,110,.08);
+padding:.7rem 1.2rem;
+background:#c9a96e22;
 color:#c9a96e;
 text-decoration:none;
 border-radius:8px;
-letter-spacing:.15em;
-font-size:.75rem;
-}
-
-.footer{
-text-align:center;
-padding:3rem 1.5rem;
-opacity:.6;
-font-size:.85rem;
 }
 
 </style>
@@ -204,67 +103,30 @@ font-size:.85rem;
 
 <body>
 
-<!-- HERO -->
-
 <section class="hero">
-
-<img src="photo1.jpg"/>
+<img src="photo1.jpg">
 
 <div class="hero-content">
-
-<h1 class="hero-names">
+<h1>
 Rahul
 <em>& Sameera</em>
 </h1>
-
-<p class="hero-date">
-Wedding Celebrations
-</p>
-
-<p class="hero-venue">
-April 2026
-</p>
-
 </div>
 
 </section>
 
-<!-- INVITE -->
+<section class="section">
 
-<section class="section reveal">
-
-<h2 class="section-title">
-Together With Our Families
-</h2>
-
-<p style="opacity:.7; line-height:1.8; max-width:340px; margin:auto;">
-We warmly invite you to join us  
-for our wedding celebrations  
-and share in our joy  
-as we begin a new journey together
-</p>
-
-</section>
-
-<!-- RECEPTION (PRIMARY) -->
-
-<section class="section reveal">
+<h2>Wedding Celebrations</h2>
 
 <div class="card reception">
 
 <h3>Reception</h3>
 
-<div class="card-date">
-Monday · 20 April 2026
-</div>
+<p>20 April 2026</p>
 
 <div class="event-time">
-<svg viewBox="0 0 24 24">
-<circle cx="12" cy="12" r="9"/>
-<line x1="12" y1="7" x2="12" y2="12"/>
-<line x1="12" y1="12" x2="16" y2="14"/>
-</svg>
-<span>5:00 PM — 8:30 PM</span>
+5:00 PM — 8:30 PM
 </div>
 
 <p>
@@ -275,61 +137,33 @@ Alengad, Thrissur
 <a class="map-btn"
 href="https://www.google.com/maps/place/?q=place_id:ChIJxRuTX_j6pzsROlEgqG3kBV0"
 target="_blank">
-Get Directions </a>
+Directions </a>
 
 </div>
 
-<!-- WEDDING (SUBTLE) -->
+<div class="card">
 
-<div class="card reveal" style="opacity:.85">
+<h3>Wedding</h3>
 
-<h3 style="font-size:1.2rem;">Wedding Ceremony</h3>
-
-<div class="card-date">
-Sunday · 19 April 2026
-</div>
+<p>19 April 2026</p>
 
 <div class="event-time">
-<svg viewBox="0 0 24 24">
-<circle cx="12" cy="12" r="9"/>
-<line x1="12" y1="7" x2="12" y2="12"/>
-<line x1="12" y1="12" x2="16" y2="14"/>
-</svg>
-<span>Muhurtam 11:00 AM — 11:30 AM</span>
+Muhurtam 11:00 — 11:30 AM
 </div>
 
 <p>
 Azeezia Convention Centre<br>
-Padivattom, Kochi
+Kochi
 </p>
 
 <a class="map-btn"
 href="https://www.google.com/maps/place/?q=place_id:ChIJkeS9qLYNCDsRd_msFKEN0CI"
 target="_blank">
-Wedding Location </a>
+Directions </a>
 
 </div>
 
 </section>
-
-<div class="footer reveal">
-We look forward to celebrating with you ✨
-</div>
-
-<script>
-
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("show");
-}
-});
-});
-
-document.querySelectorAll(".reveal")
-.forEach(el=>observer.observe(el));
-
-</script>
 
 </body>
 </html>
