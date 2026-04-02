@@ -20,30 +20,18 @@
 
 <style>
 
-*{box-sizing:border-box;margin:0;padding:0}
-
-:root{
---bg:#0e0c0a;
---bg2:#141210;
---surface:#1c1814;
---border:rgba(255,255,255,0.07);
---gold:#c9a96e;
---gold-dim:#9c7a44;
---cream:#f0e8d8;
---muted:#7a6e62;
---white:#ffffff;
---nav-h:68px;
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
 }
 
 body{
-background:var(--bg);
-color:var(--cream);
+background:#0e0c0a;
+color:#f0e8d8;
 font-family:'Outfit',sans-serif;
-padding-bottom:var(--nav-h);
+overflow-x:hidden;
 }
-
-.page{display:none}
-.page.active{display:block}
 
 /* HERO */
 
@@ -53,7 +41,7 @@ position:relative;
 overflow:hidden;
 }
 
-.hero-photo{
+.hero img{
 position:absolute;
 width:100%;
 height:100%;
@@ -66,7 +54,7 @@ position:absolute;
 bottom:0;
 left:0;
 right:0;
-padding:2rem;
+padding:2.5rem 1.5rem;
 text-align:center;
 }
 
@@ -78,13 +66,20 @@ color:white;
 
 .hero-names em{
 display:block;
-color:var(--gold);
+color:#c9a96e;
+font-style:italic;
 }
 
 .hero-date{
 margin-top:1rem;
 font-size:.8rem;
-letter-spacing:.2em;
+letter-spacing:.25em;
+}
+
+.hero-venue{
+margin-top:.4rem;
+font-size:.8rem;
+opacity:.7;
 }
 
 /* COUNTDOWN */
@@ -92,89 +87,87 @@ letter-spacing:.2em;
 .countdown{
 display:flex;
 justify-content:center;
-gap:1.5rem;
+gap:1.6rem;
 margin-top:2rem;
+}
+
+.cd{
+text-align:center;
 }
 
 .cd-num{
-font-size:1.5rem;
-color:var(--gold);
+font-size:1.8rem;
+color:#c9a96e;
+font-family:'Playfair Display',serif;
+}
+
+/* SECTION */
+
+.section{
+padding:3rem 1.5rem;
 text-align:center;
 }
 
-/* BODY */
-
-.home-body{
-background:var(--bg2);
-padding:2rem;
-text-align:center;
-}
-
-.page-title{
+.section-title{
 font-family:'Playfair Display',serif;
 font-size:2rem;
-}
-
-.quick-links{
-margin-top:2rem;
-}
-
-.ql-btn{
-display:block;
-background:var(--surface);
-padding:1rem;
-border-radius:10px;
-cursor:pointer;
-}
-
-/* EVENTS */
-
-.timeline{
-padding:2rem;
-}
-
-.tl-card{
-background:var(--surface);
-padding:1.5rem;
-border-radius:12px;
 margin-bottom:1rem;
 }
 
-.map-btn{
-display:block;
-margin-top:1rem;
-padding:.6rem;
-background:rgba(201,169,110,.1);
-text-decoration:none;
-color:var(--gold);
-text-align:center;
-border-radius:6px;
+.section-sub{
+opacity:.7;
+line-height:1.7;
+max-width:320px;
+margin:auto;
 }
 
-/* NAV */
+/* EVENT CARDS */
 
-.bottom-nav{
-position:fixed;
-bottom:0;
-left:0;
-right:0;
-height:68px;
-background:#0e0c0a;
+.events{
+margin-top:2rem;
 display:flex;
-justify-content:space-around;
-align-items:center;
-border-top:1px solid var(--border);
+flex-direction:column;
+gap:1.2rem;
 }
 
-.nav-btn{
-background:none;
-border:none;
-color:var(--muted);
-cursor:pointer;
+.card{
+background:#1c1814;
+padding:1.5rem;
+border-radius:14px;
+border:1px solid rgba(255,255,255,.06);
 }
 
-.nav-btn.active{
-color:var(--gold);
+.card h3{
+font-family:'Playfair Display',serif;
+margin-bottom:.5rem;
+}
+
+.card-date{
+font-size:.7rem;
+letter-spacing:.2em;
+color:#c9a96e;
+margin-bottom:.7rem;
+}
+
+.map-btn{
+display:inline-block;
+margin-top:1rem;
+padding:.7rem 1.2rem;
+background:rgba(201,169,110,.08);
+color:#c9a96e;
+text-decoration:none;
+border-radius:8px;
+font-size:.75rem;
+letter-spacing:.15em;
+}
+
+/* FOOTER */
+
+.footer{
+text-align:center;
+padding:3rem 1.5rem;
+opacity:.6;
+font-size:.8rem;
 }
 
 </style>
@@ -183,12 +176,11 @@ color:var(--gold);
 
 <body>
 
-<!-- HOME -->
+<!-- HERO -->
 
-<div class="page active" id="page-home">
+<section class="hero">
 
-<div class="hero">
-<img class="hero-photo" src="photo1.jpg"/>
+<img src="photo1.jpg"/>
 
 <div class="hero-content">
 
@@ -201,60 +193,75 @@ Rahul
 Sunday · 19 April 2026
 </p>
 
+<p class="hero-venue">
+Azeezia Convention Centre, Kochi
+</p>
+
 <div class="countdown">
-<div>
-<div class="cd-num" id="cd-d">--</div>
+
+<div class="cd">
+<div class="cd-num" id="d">--</div>
 <div>Days</div>
 </div>
 
-<div>
-<div class="cd-num" id="cd-h">--</div>
+<div class="cd">
+<div class="cd-num" id="h">--</div>
 <div>Hrs</div>
 </div>
 
-<div>
-<div class="cd-num" id="cd-m">--</div>
+<div class="cd">
+<div class="cd-num" id="m">--</div>
 <div>Min</div>
 </div>
 
-<div>
-<div class="cd-num" id="cd-s">--</div>
+<div class="cd">
+<div class="cd-num" id="s">--</div>
 <div>Sec</div>
 </div>
 
 </div>
-</div>
+
 </div>
 
-<div class="home-body">
+</section>
 
-<h2 class="page-title">
+<!-- INVITE TEXT -->
+
+<section class="section">
+
+<h2 class="section-title">
 Two Souls One Journey
 </h2>
 
-<div class="quick-links">
-<div class="ql-btn" onclick="showPage('events')">
-View Events
-</div>
-</div>
+<p class="section-sub">
+With joyful hearts and family blessings,  
+we invite you to celebrate the wedding  
+of Rahul & Sameera
+</p>
 
-</div>
-
-</div>
+</section>
 
 <!-- EVENTS -->
 
-<div class="page" id="page-events">
+<section class="section">
 
-<div class="timeline">
+<h2 class="section-title">
+Wedding Celebrations
+</h2>
 
-<div class="tl-card">
+<div class="events">
+
+<div class="card">
 
 <h3>Wedding Ceremony</h3>
 
+<div class="card-date">
+Sunday · 19 April 2026
+</div>
+
 <p>
 Azeezia Convention Centre<br>
-Kochi
+Padivattom, Kochi
 </p>
 
 <a class="map-btn"
@@ -264,9 +271,13 @@ Get Directions </a>
 
 </div>
 
-<div class="tl-card">
+<div class="card">
 
 <h3>Reception</h3>
+
+<div class="card-date">
+Monday · 20 April 2026
+</div>
 
 <p>
 Bethlehem Auditorium<br>
@@ -282,63 +293,47 @@ Get Directions </a>
 
 </div>
 
-</div>
+</section>
 
-<!-- NAV -->
+<!-- FOOTER -->
 
-<div class="bottom-nav">
+<div class="footer">
 
-<button class="nav-btn active"
-onclick="showPage('home')"
-id="nav-home">
-Home </button>
-
-<button class="nav-btn"
-onclick="showPage('events')"
-id="nav-events">
-Events </button>
+We look forward to celebrating with you ✨
 
 </div>
 
 <script>
 
-function showPage(id){
+function countdown(){
 
-document.querySelectorAll('.page')
-.forEach(p=>p.classList.remove('active'));
+const target=
+new Date("2026-04-19T11:00:00");
 
-document.getElementById('page-'+id)
-.classList.add('active');
-
-}
-
-/* COUNTDOWN */
-
-function tick(){
+const now=
+new Date();
 
 const diff=
-new Date('2026-04-19T11:00:00')
--new Date();
+target-now;
 
 if(diff<=0)return;
 
-document.getElementById('cd-d')
+document.getElementById("d")
 .textContent=Math.floor(diff/86400000);
 
-document.getElementById('cd-h')
+document.getElementById("h")
 .textContent=Math.floor((diff%86400000)/3600000);
 
-document.getElementById('cd-m')
+document.getElementById("m")
 .textContent=Math.floor((diff%3600000)/60000);
 
-document.getElementById('cd-s')
+document.getElementById("s")
 .textContent=Math.floor((diff%60000)/1000);
 
 }
 
-tick();
-
-setInterval(tick,1000);
+countdown();
+setInterval(countdown,1000);
 
 </script>
 
