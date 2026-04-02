@@ -1,31 +1,346 @@
-<div class="timeline">
+<!DOCTYPE html>
 
-  <div class="tl-item">
-    <div class="tl-dot-wrap"><div class="tl-dot"></div></div>
-    <div class="tl-card">
-      <span class="tl-icon">🪔</span>
-      <div class="tl-event-name">Wedding Ceremony</div>
-      <div class="tl-date">Sunday · 19 April 2026</div>
-      <div class="tl-info"><strong>Azeezia Convention Centre</strong><br>Padivattom, Kochi, Kerala</div>
-      <span class="tl-time-chip">11:00 AM — 11:30 AM</span>
-      <a class="map-btn" href="https://www.google.com/maps/place/?q=place_id:ChIJkeS9qLYNCDsRd_msFKEN0CI" target="_blank">
-        Get Directions
-      </a>
-    </div>
-  </div>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<meta name="theme-color" content="#0e0c0a"/>
 
-  <div class="tl-item">
-    <div class="tl-dot-wrap"><div class="tl-dot"></div></div>
-    <div class="tl-card">
-      <span class="tl-icon">🥂</span>
-      <div class="tl-event-name">Reception</div>
-      <div class="tl-date">Monday · 20 April 2026</div>
-      <div class="tl-info"><strong>Bethlehem Auditorium</strong><br>Alengad, Thrissur, Kerala</div>
-      <span class="tl-time-chip">Evening</span>
-      <a class="map-btn" href="https://www.google.com/maps/place/?q=place_id:ChIJxRuTX_j6pzsROlEgqG3kBV0" target="_blank">
-        Get Directions
-      </a>
-    </div>
-  </div>
+<title>Rahul & Sameera — 19 April 2026</title>
+
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Rahul & Sameera are Getting Married 💍"/>
+<meta property="og:description" content="Join us to celebrate our wedding on Sunday, 19 April 2026 at Azeezia Convention Centre, Kochi."/>
+<meta property="og:image" content="photo1.jpg"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Outfit:wght@200;300;400&display=swap" rel="stylesheet"/>
+
+<style>
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+--bg:#0e0c0a;
+--bg2:#141210;
+--surface:#1c1814;
+--border:rgba(255,255,255,0.07);
+--gold:#c9a96e;
+--gold-dim:#9c7a44;
+--cream:#f0e8d8;
+--muted:#7a6e62;
+--white:#ffffff;
+--nav-h:68px;
+}
+
+body{
+background:var(--bg);
+color:var(--cream);
+font-family:'Outfit',sans-serif;
+padding-bottom:var(--nav-h);
+}
+
+.page{display:none}
+.page.active{display:block}
+
+/* HERO */
+
+.hero{
+height:100vh;
+position:relative;
+overflow:hidden;
+}
+
+.hero-photo{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+filter:brightness(.6);
+}
+
+.hero-content{
+position:absolute;
+bottom:0;
+left:0;
+right:0;
+padding:2rem;
+text-align:center;
+}
+
+.hero-names{
+font-family:'Playfair Display',serif;
+font-size:3rem;
+color:white;
+}
+
+.hero-names em{
+display:block;
+color:var(--gold);
+}
+
+.hero-date{
+margin-top:1rem;
+font-size:.8rem;
+letter-spacing:.2em;
+}
+
+/* COUNTDOWN */
+
+.countdown{
+display:flex;
+justify-content:center;
+gap:1.5rem;
+margin-top:2rem;
+}
+
+.cd-num{
+font-size:1.5rem;
+color:var(--gold);
+text-align:center;
+}
+
+/* BODY */
+
+.home-body{
+background:var(--bg2);
+padding:2rem;
+text-align:center;
+}
+
+.page-title{
+font-family:'Playfair Display',serif;
+font-size:2rem;
+}
+
+.quick-links{
+margin-top:2rem;
+}
+
+.ql-btn{
+display:block;
+background:var(--surface);
+padding:1rem;
+border-radius:10px;
+cursor:pointer;
+}
+
+/* EVENTS */
+
+.timeline{
+padding:2rem;
+}
+
+.tl-card{
+background:var(--surface);
+padding:1.5rem;
+border-radius:12px;
+margin-bottom:1rem;
+}
+
+.map-btn{
+display:block;
+margin-top:1rem;
+padding:.6rem;
+background:rgba(201,169,110,.1);
+text-decoration:none;
+color:var(--gold);
+text-align:center;
+border-radius:6px;
+}
+
+/* NAV */
+
+.bottom-nav{
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+height:68px;
+background:#0e0c0a;
+display:flex;
+justify-content:space-around;
+align-items:center;
+border-top:1px solid var(--border);
+}
+
+.nav-btn{
+background:none;
+border:none;
+color:var(--muted);
+cursor:pointer;
+}
+
+.nav-btn.active{
+color:var(--gold);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HOME -->
+
+<div class="page active" id="page-home">
+
+<div class="hero">
+<img class="hero-photo" src="photo1.jpg"/>
+
+<div class="hero-content">
+
+<h1 class="hero-names">
+Rahul
+<em>& Sameera</em>
+</h1>
+
+<p class="hero-date">
+Sunday · 19 April 2026
+</p>
+
+<div class="countdown">
+<div>
+<div class="cd-num" id="cd-d">--</div>
+<div>Days</div>
+</div>
+
+<div>
+<div class="cd-num" id="cd-h">--</div>
+<div>Hrs</div>
+</div>
+
+<div>
+<div class="cd-num" id="cd-m">--</div>
+<div>Min</div>
+</div>
+
+<div>
+<div class="cd-num" id="cd-s">--</div>
+<div>Sec</div>
+</div>
 
 </div>
+</div>
+</div>
+
+<div class="home-body">
+
+<h2 class="page-title">
+Two Souls One Journey
+</h2>
+
+<div class="quick-links">
+<div class="ql-btn" onclick="showPage('events')">
+View Events
+</div>
+</div>
+
+</div>
+
+</div>
+
+<!-- EVENTS -->
+
+<div class="page" id="page-events">
+
+<div class="timeline">
+
+<div class="tl-card">
+
+<h3>Wedding Ceremony</h3>
+
+<p>
+Azeezia Convention Centre<br>
+Kochi
+</p>
+
+<a class="map-btn"
+href="https://www.google.com/maps/place/?q=place_id:ChIJkeS9qLYNCDsRd_msFKEN0CI"
+target="_blank">
+Get Directions </a>
+
+</div>
+
+<div class="tl-card">
+
+<h3>Reception</h3>
+
+<p>
+Bethlehem Auditorium<br>
+Thrissur
+</p>
+
+<a class="map-btn"
+href="https://www.google.com/maps/place/?q=place_id:ChIJxRuTX_j6pzsROlEgqG3kBV0"
+target="_blank">
+Get Directions </a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- NAV -->
+
+<div class="bottom-nav">
+
+<button class="nav-btn active"
+onclick="showPage('home')"
+id="nav-home">
+Home </button>
+
+<button class="nav-btn"
+onclick="showPage('events')"
+id="nav-events">
+Events </button>
+
+</div>
+
+<script>
+
+function showPage(id){
+
+document.querySelectorAll('.page')
+.forEach(p=>p.classList.remove('active'));
+
+document.getElementById('page-'+id)
+.classList.add('active');
+
+}
+
+/* COUNTDOWN */
+
+function tick(){
+
+const diff=
+new Date('2026-04-19T11:00:00')
+-new Date();
+
+if(diff<=0)return;
+
+document.getElementById('cd-d')
+.textContent=Math.floor(diff/86400000);
+
+document.getElementById('cd-h')
+.textContent=Math.floor((diff%86400000)/3600000);
+
+document.getElementById('cd-m')
+.textContent=Math.floor((diff%3600000)/60000);
+
+document.getElementById('cd-s')
+.textContent=Math.floor((diff%60000)/1000);
+
+}
+
+tick();
+
+setInterval(tick,1000);
+
+</script>
+
+</body>
+</html>
