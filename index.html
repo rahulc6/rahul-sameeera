@@ -33,6 +33,42 @@ font-family:'Outfit',sans-serif;
 overflow-x:hidden;
 }
 
+/* Animations */
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@keyframes zoomSlow{
+from{transform:scale(1)}
+to{transform:scale(1.08)}
+}
+
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-6px)}
+100%{transform:translateY(0)}
+}
+
+.reveal{
+opacity:0;
+transform:translateY(30px);
+transition:all .9s ease;
+}
+
+.reveal.show{
+opacity:1;
+transform:translateY(0);
+}
+
+
 /* HERO */
 
 .hero{
@@ -47,6 +83,7 @@ width:100%;
 height:100%;
 object-fit:cover;
 filter:brightness(.6);
+animation:zoomSlow 18s ease-in-out infinite alternate;
 }
 
 .hero-content{
@@ -62,6 +99,7 @@ text-align:center;
 font-family:'Playfair Display',serif;
 font-size:3rem;
 color:white;
+animation:fadeUp 1s ease .4s both;
 }
 
 .hero-names em{
@@ -74,12 +112,14 @@ font-style:italic;
 margin-top:1rem;
 font-size:.8rem;
 letter-spacing:.25em;
+animation:fadeUp 1s ease .8s both;
 }
 
 .hero-venue{
 margin-top:.4rem;
 font-size:.8rem;
 opacity:.7;
+animation:fadeUp 1s ease 1s both;
 }
 
 /* COUNTDOWN */
@@ -89,10 +129,12 @@ display:flex;
 justify-content:center;
 gap:1.6rem;
 margin-top:2rem;
+animation:fadeUp 1s ease 1.2s both;
 }
 
 .cd{
 text-align:center;
+animation:float 4s ease-in-out infinite;
 }
 
 .cd-num{
@@ -135,6 +177,11 @@ background:#1c1814;
 padding:1.5rem;
 border-radius:14px;
 border:1px solid rgba(255,255,255,.06);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-5px);
 }
 
 .card h3{
@@ -159,6 +206,11 @@ text-decoration:none;
 border-radius:8px;
 font-size:.75rem;
 letter-spacing:.15em;
+transition:.3s;
+}
+
+.map-btn:hover{
+background:rgba(201,169,110,.18);
 }
 
 /* FOOTER */
@@ -225,9 +277,9 @@ Azeezia Convention Centre, Kochi
 
 </section>
 
-<!-- INVITE TEXT -->
+<!-- INVITE -->
 
-<section class="section">
+<section class="section reveal">
 
 <h2 class="section-title">
 Two Souls One Journey
@@ -243,7 +295,7 @@ of Rahul & Sameera
 
 <!-- EVENTS -->
 
-<section class="section">
+<section class="section reveal">
 
 <h2 class="section-title">
 Wedding Celebrations
@@ -251,7 +303,7 @@ Wedding Celebrations
 
 <div class="events">
 
-<div class="card">
+<div class="card reveal">
 
 <h3>Wedding Ceremony</h3>
 
@@ -271,7 +323,7 @@ Get Directions </a>
 
 </div>
 
-<div class="card">
+<div class="card reveal">
 
 <h3>Reception</h3>
 
@@ -295,9 +347,7 @@ Get Directions </a>
 
 </section>
 
-<!-- FOOTER -->
-
-<div class="footer">
+<div class="footer reveal">
 
 We look forward to celebrating with you ✨
 
@@ -305,35 +355,39 @@ We look forward to celebrating with you ✨
 
 <script>
 
+/* Countdown */
+
 function countdown(){
 
-const target=
-new Date("2026-04-19T11:00:00");
-
-const now=
-new Date();
-
-const diff=
-target-now;
+const target=new Date("2026-04-19T11:00:00");
+const now=new Date();
+const diff=target-now;
 
 if(diff<=0)return;
 
-document.getElementById("d")
-.textContent=Math.floor(diff/86400000);
-
-document.getElementById("h")
-.textContent=Math.floor((diff%86400000)/3600000);
-
-document.getElementById("m")
-.textContent=Math.floor((diff%3600000)/60000);
-
-document.getElementById("s")
-.textContent=Math.floor((diff%60000)/1000);
+d.textContent=Math.floor(diff/86400000);
+h.textContent=Math.floor((diff%86400000)/3600000);
+m.textContent=Math.floor((diff%3600000)/60000);
+s.textContent=Math.floor((diff%60000)/1000);
 
 }
 
 countdown();
 setInterval(countdown,1000);
+
+
+/* Scroll Reveal */
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+});
+
+document.querySelectorAll(".reveal")
+.forEach(el=>observer.observe(el));
 
 </script>
 
