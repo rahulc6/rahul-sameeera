@@ -10,7 +10,7 @@
 
 <meta property="og:type" content="website"/>
 <meta property="og:title" content="Rahul & Sameera are Getting Married 💍"/>
-<meta property="og:description" content="Join us to celebrate our wedding on Sunday, 19 April 2026 at Azeezia Convention Centre, Kochi."/>
+<meta property="og:description" content="Join us to celebrate our wedding & reception"/>
 <meta property="og:image" content="photo1.jpg"/>
 
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -20,11 +20,7 @@
 
 <style>
 
-*{
-box-sizing:border-box;
-margin:0;
-padding:0;
-}
+*{box-sizing:border-box;margin:0;padding:0}
 
 body{
 background:#0e0c0a;
@@ -36,14 +32,8 @@ overflow-x:hidden;
 /* Animations */
 
 @keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(30px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
+from{opacity:0;transform:translateY(30px)}
+to{opacity:1;transform:translateY(0)}
 }
 
 @keyframes zoomSlow{
@@ -60,14 +50,13 @@ to{transform:scale(1.08)}
 .reveal{
 opacity:0;
 transform:translateY(30px);
-transition:all .9s ease;
+transition:.9s ease;
 }
 
 .reveal.show{
 opacity:1;
 transform:translateY(0);
 }
-
 
 /* HERO */
 
@@ -134,7 +123,7 @@ animation:fadeUp 1s ease 1.2s both;
 
 .cd{
 text-align:center;
-animation:float 4s ease-in-out infinite;
+animation:float 4s ease infinite;
 }
 
 .cd-num{
@@ -174,7 +163,7 @@ gap:1.2rem;
 
 .card{
 background:#1c1814;
-padding:1.5rem;
+padding:1.6rem;
 border-radius:14px;
 border:1px solid rgba(255,255,255,.06);
 transition:.4s;
@@ -182,6 +171,20 @@ transition:.4s;
 
 .card:hover{
 transform:translateY(-5px);
+}
+
+.reception-card{
+border:1px solid rgba(201,169,110,.25);
+background:linear-gradient(
+to bottom,
+rgba(201,169,110,.08),
+transparent
+);
+transform:scale(1.02);
+}
+
+.reception-card h3{
+color:#c9a96e;
 }
 
 .card h3{
@@ -287,8 +290,8 @@ Two Souls One Journey
 
 <p class="section-sub">
 With joyful hearts and family blessings,  
-we invite you to celebrate the wedding  
-of Rahul & Sameera
+we invite you to celebrate our wedding  
+and reception with us
 </p>
 
 </section>
@@ -301,7 +304,32 @@ of Rahul & Sameera
 Wedding Celebrations
 </h2>
 
+<p class="section-sub">
+Your presence will make our celebration  
+even more meaningful
+</p>
+
 <div class="events">
+
+<div class="card reveal reception-card">
+
+<h3>Reception</h3>
+
+<div class="card-date">
+Monday · 20 April 2026
+</div>
+
+<p>
+Bethlehem Auditorium<br>
+Alengad, Thrissur
+</p>
+
+<a class="map-btn"
+href="https://www.google.com/maps/place/?q=place_id:ChIJxRuTX_j6pzsROlEgqG3kBV0"
+target="_blank">
+Join Us for Reception </a>
+
+</div>
 
 <div class="card reveal">
 
@@ -319,27 +347,7 @@ Padivattom, Kochi
 <a class="map-btn"
 href="https://www.google.com/maps/place/?q=place_id:ChIJkeS9qLYNCDsRd_msFKEN0CI"
 target="_blank">
-Get Directions </a>
-
-</div>
-
-<div class="card reveal">
-
-<h3>Reception</h3>
-
-<div class="card-date">
-Monday · 20 April 2026
-</div>
-
-<p>
-Bethlehem Auditorium<br>
-Thrissur
-</p>
-
-<a class="map-btn"
-href="https://www.google.com/maps/place/?q=place_id:ChIJxRuTX_j6pzsROlEgqG3kBV0"
-target="_blank">
-Get Directions </a>
+Wedding Details </a>
 
 </div>
 
@@ -348,17 +356,12 @@ Get Directions </a>
 </section>
 
 <div class="footer reveal">
-
 We look forward to celebrating with you ✨
-
 </div>
 
 <script>
 
-/* Countdown */
-
 function countdown(){
-
 const target=new Date("2026-04-19T11:00:00");
 const now=new Date();
 const diff=target-now;
@@ -369,14 +372,10 @@ d.textContent=Math.floor(diff/86400000);
 h.textContent=Math.floor((diff%86400000)/3600000);
 m.textContent=Math.floor((diff%3600000)/60000);
 s.textContent=Math.floor((diff%60000)/1000);
-
 }
 
 countdown();
 setInterval(countdown,1000);
-
-
-/* Scroll Reveal */
 
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
